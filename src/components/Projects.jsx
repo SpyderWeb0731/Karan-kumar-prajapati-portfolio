@@ -12,14 +12,18 @@ import {
   Activity,
 } from "lucide-react";
 
+/* =========================================================
+   PROJECT DATA
+   ========================================================= */
+
 const projects = [
   {
     id: "01",
     title: "GRYPHON CYBER",
     subtitle: "ORGANIZATION WEBSITE",
+    category: "WEB DEVELOPMENT",
     description:
       "A professional website created for Gryphon Cyber Private Limited, presenting the organization's cybersecurity services, capabilities, and technology-focused work.",
-    category: "WEB DEVELOPMENT",
     icon: Shield,
     featured: true,
     technologies: [
@@ -27,7 +31,9 @@ const projects = [
       "Responsive Design",
       "UI / UX",
     ],
-    link: "#",
+
+    // LIVE DEPLOYED WEBSITE
+    link: "https://spyderweb0731.github.io/Gryphon-Cyber-Website/",
   },
 
   {
@@ -91,7 +97,6 @@ const projects = [
   },
 ];
 
-
 /* =========================================================
    DEPLOYMENT STATUS MODAL
    ========================================================= */
@@ -106,7 +111,6 @@ function DeploymentModal({ project, onClose }) {
         exit={{ opacity: 0 }}
         onClick={onClose}
       >
-
         <motion.div
           className="deployment-modal"
           initial={{
@@ -128,11 +132,8 @@ function DeploymentModal({ project, onClose }) {
             duration: 0.35,
             ease: [0.22, 1, 0.36, 1],
           }}
-          onClick={(event) =>
-            event.stopPropagation()
-          }
+          onClick={(event) => event.stopPropagation()}
         >
-
           {/* SCAN LINE */}
 
           <div className="deployment-scan-line" />
@@ -147,21 +148,28 @@ function DeploymentModal({ project, onClose }) {
             <X size={18} />
           </button>
 
-
           {/* ICON */}
 
           <motion.div
             className="deployment-icon"
-            initial={{ scale: 0.7, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
+            initial={{
+              scale: 0.7,
+              opacity: 0,
+            }}
+            animate={{
+              scale: 1,
+              opacity: 1,
+            }}
             transition={{
               delay: 0.1,
               duration: 0.35,
             }}
           >
-            <Rocket size={28} strokeWidth={1.4} />
+            <Rocket
+              size={28}
+              strokeWidth={1.4}
+            />
           </motion.div>
-
 
           {/* STATUS */}
 
@@ -170,13 +178,9 @@ function DeploymentModal({ project, onClose }) {
             DEPLOYMENT STATUS
           </div>
 
-
           {/* TITLE */}
 
-          <h3>
-            {project.title}
-          </h3>
-
+          <h3>{project.title}</h3>
 
           {/* MAIN MESSAGE */}
 
@@ -185,7 +189,6 @@ function DeploymentModal({ project, onClose }) {
             <br />
             <span>IN PROGRESS</span>
           </h4>
-
 
           <p>
             This project is currently undergoing
@@ -198,26 +201,24 @@ function DeploymentModal({ project, onClose }) {
             once deployment is complete.
           </p>
 
-
           {/* PROGRESS */}
 
           <div className="deployment-progress">
-
             <div className="deployment-progress-top">
-              <span>
-                SYSTEM STATUS
-              </span>
+              <span>SYSTEM STATUS</span>
 
-              <span>
-                BUILDING
-              </span>
+              <span>BUILDING</span>
             </div>
 
             <div className="deployment-progress-track">
               <motion.div
                 className="deployment-progress-bar"
-                initial={{ width: "0%" }}
-                animate={{ width: "72%" }}
+                initial={{
+                  width: "0%",
+                }}
+                animate={{
+                  width: "72%",
+                }}
                 transition={{
                   duration: 1.1,
                   delay: 0.2,
@@ -225,41 +226,32 @@ function DeploymentModal({ project, onClose }) {
                 }}
               />
             </div>
-
           </div>
-
 
           {/* FOOTER */}
 
           <div className="deployment-footer">
-
             <div>
               <Activity size={14} />
+
               <span>
                 LIVE DEPLOYMENT PENDING
               </span>
             </div>
 
-            <span>
-              {project.id}
-            </span>
-
+            <span>{project.id}</span>
           </div>
-
         </motion.div>
-
       </motion.div>
     </AnimatePresence>
   );
 }
-
 
 /* =========================================================
    PROJECT CARD
    ========================================================= */
 
 function ProjectCard({ project, index }) {
-
   const Icon = project.icon;
 
   const [showDeployment, setShowDeployment] =
@@ -269,7 +261,6 @@ function ProjectCard({ project, index }) {
     project.link &&
     project.link !== "#";
 
-
   return (
     <>
       <motion.article
@@ -278,40 +269,32 @@ function ProjectCard({ project, index }) {
             ? "project-card-featured"
             : "project-card-small"
         }`}
-
         initial={{
           opacity: 0,
           y: 60,
         }}
-
         whileInView={{
           opacity: 1,
           y: 0,
         }}
-
         viewport={{
           once: true,
           amount: 0.15,
         }}
-
         transition={{
           duration: 0.7,
           delay: index * 0.1,
           ease: [0.22, 1, 0.36, 1],
         }}
-
         whileHover={{
           y: -8,
         }}
       >
-
         <div className="project-card-glow" />
-
 
         {/* TOP */}
 
         <div className="project-card-top">
-
           <span className="project-number">
             {project.id}
           </span>
@@ -322,35 +305,24 @@ function ProjectCard({ project, index }) {
               strokeWidth={1.5}
             />
           </div>
-
         </div>
-
 
         {/* CONTENT */}
 
         <div className="project-card-content">
-
           <span className="project-category">
             {project.category}
           </span>
 
-          <h3>
-            {project.title}
-          </h3>
+          <h3>{project.title}</h3>
 
-          <h4>
-            {project.subtitle}
-          </h4>
+          <h4>{project.subtitle}</h4>
 
-          <p>
-            {project.description}
-          </p>
-
+          <p>{project.description}</p>
 
           {/* TECHNOLOGIES */}
 
           <div className="project-tech">
-
             {project.technologies.map(
               (technology) => (
                 <span key={technology}>
@@ -358,18 +330,13 @@ function ProjectCard({ project, index }) {
                 </span>
               )
             )}
-
           </div>
-
         </div>
-
 
         {/* FOOTER */}
 
         <div className="project-card-footer">
-
           {hasLiveProject ? (
-
             <a
               href={project.link}
               target="_blank"
@@ -382,9 +349,7 @@ function ProjectCard({ project, index }) {
 
               <ExternalLink size={16} />
             </a>
-
           ) : (
-
             <button
               type="button"
               className="
@@ -401,18 +366,13 @@ function ProjectCard({ project, index }) {
 
               <ArrowUpRight size={16} />
             </button>
-
           )}
-
 
           <span className="project-arrow">
             <ArrowUpRight size={22} />
           </span>
-
         </div>
-
       </motion.article>
-
 
       {/* DEPLOYMENT MODAL */}
 
@@ -424,18 +384,15 @@ function ProjectCard({ project, index }) {
           }
         />
       )}
-
     </>
   );
 }
-
 
 /* =========================================================
    PROJECTS SECTION
    ========================================================= */
 
 export default function Projects() {
-
   const featuredProjects =
     projects.filter(
       (project) =>
@@ -448,55 +405,41 @@ export default function Projects() {
         !project.featured
     );
 
-
   return (
     <section
       id="projects"
       className="projects-section"
     >
-
       <div className="projects-container">
-
 
         {/* SECTION HEADER */}
 
         <motion.div
           className="projects-header"
-
           initial={{
             opacity: 0,
             y: 40,
           }}
-
           whileInView={{
             opacity: 1,
             y: 0,
           }}
-
           viewport={{
             once: true,
           }}
-
           transition={{
             duration: 0.7,
           }}
         >
-
           <div className="section-label">
-
-            <span>
-              03
-            </span>
+            <span>03</span>
 
             <span>
               PROJECTS
             </span>
-
           </div>
 
-
           <div className="projects-heading-row">
-
             <h2>
               BUILDING
               <br />
@@ -512,16 +455,12 @@ export default function Projects() {
               engineering, and practical
               technology solutions.
             </p>
-
           </div>
-
         </motion.div>
-
 
         {/* FEATURED PROJECTS */}
 
         <div className="projects-featured">
-
           {featuredProjects.map(
             (project, index) => (
               <ProjectCard
@@ -531,14 +470,11 @@ export default function Projects() {
               />
             )
           )}
-
         </div>
-
 
         {/* OTHER PROJECTS */}
 
         <div className="projects-secondary">
-
           {secondaryProjects.map(
             (project, index) => (
               <ProjectCard
@@ -548,11 +484,8 @@ export default function Projects() {
               />
             )
           )}
-
         </div>
-
       </div>
-
     </section>
   );
 }

@@ -1,16 +1,40 @@
-# React + Vite
+# Karan Kumar Prajapati — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Welcome to my personal portfolio website.
 
-Currently, two official plugins are available:
+I am a **Cyber Security Analyst and Web Developer** with an interest in cybersecurity, web development, networking, and modern digital technologies.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 About
 
-## React Compiler
+This portfolio showcases my:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Cybersecurity skills and experience
+- Web development projects
+- Technical skills
+- Professional experience
+- Education and achievements
+- Contact information
 
-## Expanding the Oxlint configuration
+## 🛠️ Technologies
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- React.js
+- JavaScript
+- HTML5
+- CSS3
+- Python
+- Java
+- SQL
+- Cybersecurity
+- Git & GitHub
+
+## 🌐 Live Website
+
+[Visit My Portfolio](https://spyderweb0731.github.io/Karan-kumar-prajapati-portfolio/)
+
+## 📂 Run Locally
+
+```bash
+git clone https://github.com/SpyderWeb0731/Karan-kumar-prajapati-portfolio.git
+cd Karan-kumar-prajapati-portfolio
+npm install
+npm run dev
